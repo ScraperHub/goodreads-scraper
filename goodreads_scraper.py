@@ -30,7 +30,7 @@ def scrape_goodreads_reviews_with_pagination(base_url):
         'css_click_selector': 'button:has(span[data-testid="loadMore"])'
     })
 
-    if response['headers']['pc_status'] == '200':
+    if response['headers']['cb_status'] == '200':
         html_content = response['body'].decode('utf-8')
         page_data = extract_book_details(html_content)
 
